@@ -1,0 +1,178 @@
+[
+    {
+        "label": "PromptTemplate",
+        "importPath": "langchain.prompts",
+        "description": "langchain.prompts",
+        "isExtraImport": true,
+        "detail": "langchain.prompts",
+        "documentation": {}
+    },
+    {
+        "label": "PromptTemplate",
+        "importPath": "langchain.prompts",
+        "description": "langchain.prompts",
+        "isExtraImport": true,
+        "detail": "langchain.prompts",
+        "documentation": {}
+    },
+    {
+        "label": "ChatOpenAI",
+        "importPath": "langchain.chat_models",
+        "description": "langchain.chat_models",
+        "isExtraImport": true,
+        "detail": "langchain.chat_models",
+        "documentation": {}
+    },
+    {
+        "label": "ChatOpenAI",
+        "importPath": "langchain.chat_models",
+        "description": "langchain.chat_models",
+        "isExtraImport": true,
+        "detail": "langchain.chat_models",
+        "documentation": {}
+    },
+    {
+        "label": "initialize_agent",
+        "importPath": "langchain.agents",
+        "description": "langchain.agents",
+        "isExtraImport": true,
+        "detail": "langchain.agents",
+        "documentation": {}
+    },
+    {
+        "label": "Tool",
+        "importPath": "langchain.agents",
+        "description": "langchain.agents",
+        "isExtraImport": true,
+        "detail": "langchain.agents",
+        "documentation": {}
+    },
+    {
+        "label": "AgentType",
+        "importPath": "langchain.agents",
+        "description": "langchain.agents",
+        "isExtraImport": true,
+        "detail": "langchain.agents",
+        "documentation": {}
+    },
+    {
+        "label": "get_profile_url",
+        "importPath": "tools.tools",
+        "description": "tools.tools",
+        "isExtraImport": true,
+        "detail": "tools.tools",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "SerpAPIWrapper",
+        "importPath": "langchain.utilities",
+        "description": "langchain.utilities",
+        "isExtraImport": true,
+        "detail": "langchain.utilities",
+        "documentation": {}
+    },
+    {
+        "label": "LLMChain",
+        "importPath": "langchain.chains",
+        "description": "langchain.chains",
+        "isExtraImport": true,
+        "detail": "langchain.chains",
+        "documentation": {}
+    },
+    {
+        "label": "linkedin",
+        "importPath": "third_parties",
+        "description": "third_parties",
+        "isExtraImport": true,
+        "detail": "third_parties",
+        "documentation": {}
+    },
+    {
+        "label": "scrape_linkedin_profile",
+        "importPath": "third_parties.linkedin",
+        "description": "third_parties.linkedin",
+        "isExtraImport": true,
+        "detail": "third_parties.linkedin",
+        "documentation": {}
+    },
+    {
+        "label": "lookup",
+        "importPath": "agents.linkedin_lookup_agent",
+        "description": "agents.linkedin_lookup_agent",
+        "isExtraImport": true,
+        "detail": "agents.linkedin_lookup_agent",
+        "documentation": {}
+    },
+    {
+        "label": "crawl",
+        "kind": 2,
+        "importPath": "agents.linkedin_lookup_agent",
+        "description": "agents.linkedin_lookup_agent",
+        "peekOfCode": "def crawl() -> str:\n    pass\ndef lookup(name: str) -> str:\n    print(\"entering linkedin lookup\")\n    llm = ChatOpenAI(temperature=0, model=\"gpt-3.5-turbo\")\n    template = \"\"\"given the full name {name_of_person}, I want you to get me a link to their LinkedIn profile page.\n                  your answer should container only a LinkedIn URL\"\"\"\n    crawl_google_tool = Tool(\n        name=\"Crawl Google 4 linkedin profile page\",\n        func=get_profile_url,",
+        "detail": "agents.linkedin_lookup_agent",
+        "documentation": {}
+    },
+    {
+        "label": "lookup",
+        "kind": 2,
+        "importPath": "agents.linkedin_lookup_agent",
+        "description": "agents.linkedin_lookup_agent",
+        "peekOfCode": "def lookup(name: str) -> str:\n    print(\"entering linkedin lookup\")\n    llm = ChatOpenAI(temperature=0, model=\"gpt-3.5-turbo\")\n    template = \"\"\"given the full name {name_of_person}, I want you to get me a link to their LinkedIn profile page.\n                  your answer should container only a LinkedIn URL\"\"\"\n    crawl_google_tool = Tool(\n        name=\"Crawl Google 4 linkedin profile page\",\n        func=get_profile_url,\n        description=\"useful when you need to get the LinkedIn page URL\",\n    )",
+        "detail": "agents.linkedin_lookup_agent",
+        "documentation": {}
+    },
+    {
+        "label": "scrape_linkedin_profile",
+        "kind": 2,
+        "importPath": "third_parties.linkedin",
+        "description": "third_parties.linkedin",
+        "peekOfCode": "def scrape_linkedin_profile(linkedin_profile_url: str):\n    \"\"\"\n    scrape information from LinkedIn profiles,\n    Manually scrape the information from LinkedIn profile\n    \"\"\"\n    print(\"scrapping data from linkedin\")\n    api_endpoint = \"https://gist.githubusercontent.com/emarco177/0d6a3f93dd06634d95e46a2782ed7490/raw/fad4d7a87e3e934ad52ba2a968bad9eb45128665/eden-marco.json\"\n    header_dic = {}\n    # api_endpoint = \"https://nubela.co/proxycurl/api/v2/linkedin\"\n    # header_dic = {\"Authorization\": f'Bearer {os.environ.get[\"PROXY_CURL_API_KEY\"]}'}",
+        "detail": "third_parties.linkedin",
+        "documentation": {}
+    },
+    {
+        "label": "CustomSerpAPIWrapper",
+        "kind": 6,
+        "importPath": "tools.tools",
+        "description": "tools.tools",
+        "peekOfCode": "class CustomSerpAPIWrapper(SerpAPIWrapper):\n    def __init__(self):\n        super(CustomSerpAPIWrapper, self).__init__()\n    @staticmethod\n    def _process_response(res: dict) -> str:\n        \"\"\"Process response from SerpAPI.\"\"\"\n        if \"error\" in res.keys():\n            raise ValueError(f\"Got error from SerpAPI: {res['error']}\")\n        if \"answer_box\" in res.keys() and \"answer\" in res[\"answer_box\"].keys():\n            toret = res[\"answer_box\"][\"answer\"]",
+        "detail": "tools.tools",
+        "documentation": {}
+    },
+    {
+        "label": "get_profile_url",
+        "kind": 2,
+        "importPath": "tools.tools",
+        "description": "tools.tools",
+        "peekOfCode": "def get_profile_url(text: str) -> str:\n    \"\"\"Searches for a LinkedIn profile page\"\"\"\n    print(\"tool.get_profile_url called with \", text)\n    serpSearch = CustomSerpAPIWrapper()\n    res = serpSearch.run(f\"{text}\")\n    print(\"serpSearch response \", res)\n    return res",
+        "detail": "tools.tools",
+        "documentation": {}
+    },
+    {
+        "label": "name",
+        "kind": 5,
+        "importPath": "ice_breaker",
+        "description": "ice_breaker",
+        "peekOfCode": "name = \"Eden Marco\"\n# linkedin_profile_url = \"https://www.linkedin.com/in/harrison-chase-961287118/\"\n# information = \"\"\"Boyan Slat (born 27 July 1994)[2][3] is a Dutch inventor and entrepreneur.[4] A former aerospace engineering student,[5][6] he is the CEO of The Ocean Cleanup.[7]\n# Initial interest in plastic pollution\n# In 2011, Slat went diving and found that the amount of plastic surpassed the number of fish in the area he explored. He made ocean plastic pollution the subject of a high school project examining why it was considered impossible to clean up. He later came up with the idea of building a passive plastic catchment system, using circulating ocean currents to net plastic waste, which he presented at a TEDx talk in Delft in 2012.[8][9]\n# Slat discontinued his aerospace engineering studies at TU Delft to devote his time to developing his idea. He founded The Ocean Cleanup in 2013, and shortly after, his TEDx talk went viral after being shared on several news sites.[8]\n# \"Technology is the most potent agent of change. It is an amplifier of our human capabilities\", Slat wrote in The Economist. \"Whereas other change-agents rely on reshuffling the existing building blocks of society, technological innovation creates entirely new ones, expanding our problem-solving toolbox.\"[10]\"\"\"\nif __name__ == \"__main__\":\n    print(\"Hello Langchain!!\")\n    # find linkedin url by name using serpAPI",
+        "detail": "ice_breaker",
+        "documentation": {}
+    }
+]
